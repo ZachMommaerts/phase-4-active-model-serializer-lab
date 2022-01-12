@@ -11,9 +11,6 @@ class AuthorsController < ApplicationController
     render json: author
   end
 
-  def short_content
-    render json: Author.all
-  end
   private
 
   def render_not_found_response

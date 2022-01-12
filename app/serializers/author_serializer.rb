@@ -1,9 +1,6 @@
 class AuthorSerializer < ActiveModel::Serializer
-  attributes :name, :short_content
+  attributes :name
   has_one :profile
-  has_many :posts
+  has_many :posts, serializer: AuthorPostSerializer
 
-  def short_content
-    "#{self.object.content[0..50]}..."
-  end
 end
